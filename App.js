@@ -9,7 +9,6 @@ const initialState = {
     status: 'Ruim', //Status
     percentage: 0, // Porcentagem
     waterBySip: 200,  // Água por gole
-    settingGoal: false,
 
 }
 
@@ -97,17 +96,15 @@ export default class App extends Component {
                                 </View>
                             </View>
                             <View style={styles.containerButton}>
-                                <TouchableOpacity style={styles.btnStyle} onPress={e => this.reset()}>
-                                    <Text style={styles.labelBtn}>Zerar</Text>
-                                </TouchableOpacity>
-                                <View style={styles.btnControls}>
                                     <TouchableOpacity style={styles.btnControlLeft} onPress={e => this.setGoal('down')}>
                                         <Text style={styles.labelBtn}>v</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.btnStyle} onPress={e => this.reset()}>
+                                        <Text style={styles.labelBtn}>Zerar</Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity style={styles.btnStyle} onPress={e => this.setGoal('up')}>
                                         <Text style={styles.labelBtn}>^</Text>
                                     </TouchableOpacity>
-                                </View>
                             </View>
                         </View>
                     </View>
@@ -143,6 +140,7 @@ const styles = StyleSheet.create({
     content: {
         height: '70%',
         justifyContent: 'space-around',
+        alignItems: 'center'
     },
 
     contentText: {
@@ -160,7 +158,7 @@ const styles = StyleSheet.create({
 
     btnControls: {
         flex: 1,
-        flexDirection: 'row',
+        flexDirection: 'row'
     },
 
     btnControlLeft: {
@@ -169,11 +167,12 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: 'white',
         marginRight: 4,
-        marginLeft: 70
     },
 
     containerButton: {
-        flexDirection: 'row'
+        width: '60%',
+        flexDirection: 'row',
+        justifyContent: 'space-around'
     },
 
     labelBtn: {
